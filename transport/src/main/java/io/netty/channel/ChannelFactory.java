@@ -16,11 +16,14 @@
 package io.netty.channel;
 
 /**
+ * 创建一个新的Channel的工厂。
+ *
  * Creates a new {@link Channel}.
  */
 @SuppressWarnings({ "ClassNameSameAsAncestorName", "deprecation" })
 public interface ChannelFactory<T extends Channel> extends io.netty.bootstrap.ChannelFactory<T> {
     /**
+     * 创建新的channel
      * Creates a new channel.
      */
     @Override

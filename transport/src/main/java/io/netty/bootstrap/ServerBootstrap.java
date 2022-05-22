@@ -38,8 +38,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 /**
- * {@link Bootstrap} sub-class which allows easy bootstrap of {@link ServerChannel}
+ * Bootstrap子类，它允许ServerChannel的简单引导。
  *
+ * {@link Bootstrap} sub-class which allows easy bootstrap of {@link ServerChannel}
  */
 public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerChannel> {
 
@@ -70,6 +71,8 @@ public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerCh
     }
 
     /**
+     * 设置父节点(acceptor)和子节点(client)的EventLoopGroup。这些EventLoopGroup的是用来处理所有事件和IO的ServerChannel和Channel的。
+     *
      * Set the {@link EventLoopGroup} for the parent (acceptor) and the child (client). These
      * {@link EventLoopGroup}'s are used to handle all the events and IO for {@link ServerChannel} and
      * {@link Channel}'s.
@@ -114,6 +117,8 @@ public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerCh
     }
 
     /**
+     * 设置ChannelHandler，用于为Channel的请求提供服务。
+     *
      * Set the {@link ChannelHandler} which is used to serve the request for the {@link Channel}'s.
      */
     public ServerBootstrap childHandler(ChannelHandler childHandler) {

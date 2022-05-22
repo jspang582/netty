@@ -39,6 +39,9 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 /**
+ * 一个引导程序，它可以很容易地引导用于客户端的通道。
+ * bind()方法与无连接传输(如数据报(UDP))结合使用非常有用。对于常规的TCP连接，请使用提供的connect()方法。
+ *
  * A {@link Bootstrap} that makes it easy to bootstrap a {@link Channel} to use
  * for clients.
  *

@@ -29,6 +29,8 @@ import java.util.NoSuchElementException;
 
 
 /**
+ * ChannelHandlers的列表，用于处理或截取Channel的入站事件和出站操作。ChannelPipeline实现了拦截过滤器(Intercepting Filter)模式的高级形式，让用户完全控制如何处理事件以及管道中的ChannelHandlers如何相互交互。
+ *
  * A list of {@link ChannelHandler}s which handles or intercepts inbound events and outbound operations of a
  * {@link Channel}.  {@link ChannelPipeline} implements an advanced form of the
  * <a href="http://www.oracle.com/technetwork/java/interceptingfilter-142169.html">Intercepting Filter</a> pattern
@@ -363,6 +365,8 @@ public interface ChannelPipeline
     ChannelPipeline addFirst(EventExecutorGroup group, ChannelHandler... handlers);
 
     /**
+     * 在此管道的最后位置插入ChannelHandlers。
+     *
      * Inserts {@link ChannelHandler}s at the last position of this pipeline.
      *
      * @param handlers  the handlers to insert last

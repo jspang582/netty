@@ -43,6 +43,9 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * AbstractBootstrap是一个帮助类，它使引导通道变得容易。它支持链式方法，以提供一种配置AbstractBootstrap的简单方法。
+ * 当不在ServerBootstrap上下文中使用时，bind()方法对于无连接传输(如数据报(UDP))非常有用。
+ *
  * {@link AbstractBootstrap} is a helper class that makes it easy to bootstrap a {@link Channel}. It support
  * method-chaining to provide an easy way to configure the {@link AbstractBootstrap}.
  *
@@ -91,6 +94,8 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     /**
+     * 用于从中创建通道实例的类。如果你的Channel实现没有无参构造函数，你可以使用这个或者channelFactory方法。
+     *
      * The {@link Class} which is used to create {@link Channel} instances from.
      * You either use this or {@link #channelFactory(io.netty.channel.ChannelFactory)} if your
      * {@link Channel} implementation has no no-args constructor.
@@ -157,6 +162,8 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     /**
+     * 允许指定一个ChannelOption，用于创建Channel实例。使用null值将删除先前设置的ChannelOption。
+     *
      * Allow to specify a {@link ChannelOption} which is used for the {@link Channel} instances once they got
      * created. Use a value of {@code null} to remove a previous set {@link ChannelOption}.
      */

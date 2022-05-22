@@ -28,6 +28,8 @@ import java.net.SocketAddress;
 
 
 /**
+ * 连接到网络套接字或组件的连接，能够进行读、写、连接和绑定等I/O操作。
+ *
  * A nexus to a network socket or a component which is capable of I/O
  * operations such as read, write, connect, and bind.
  * <p>
@@ -178,6 +180,8 @@ public interface Channel extends AttributeMap, ChannelOutboundInvoker, Comparabl
     Unsafe unsafe();
 
     /**
+     * 返回指定的ChannelPipeline。
+     *
      * Return the assigned {@link ChannelPipeline}.
      */
     ChannelPipeline pipeline();
