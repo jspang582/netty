@@ -30,6 +30,12 @@ import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
 
 /**
+ * 零字节或多个字节(字节)的随机顺序可访问序列。该接口为一个或多个基本字节数组(byte[])和NIO缓冲区提供了一个抽象视图。
+ * 可将buffer分为3个区域：
+ *  已经读取的区域：[0,readIndex)
+ *  可读取的区域：[readIndex,writeIndex)
+ *  可写的区域：[writeIndex,capacity)
+ *
  * A random and sequential accessible sequence of zero or more bytes (octets).
  * This interface provides an abstract view for one or more primitive byte
  * arrays ({@code byte[]}) and {@linkplain ByteBuffer NIO buffers}.
@@ -248,6 +254,8 @@ import java.nio.charset.UnsupportedCharsetException;
 public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
 
     /**
+     * 返回该缓冲区可以包含的字节数。
+     *
      * Returns the number of bytes (octets) this buffer can contain.
      */
     public abstract int capacity();
@@ -321,6 +329,8 @@ public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
     public abstract ByteBuf asReadOnly();
 
     /**
+     * 返回该缓冲区的读索引。
+     *
      * Returns the {@code readerIndex} of this buffer.
      */
     public abstract int readerIndex();
@@ -336,6 +346,8 @@ public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
     public abstract ByteBuf readerIndex(int readerIndex);
 
     /**
+     * 返回该缓冲区的写索引。
+     *
      * Returns the {@code writerIndex} of this buffer.
      */
     public abstract int writerIndex();
@@ -567,6 +579,8 @@ public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
     public abstract boolean getBoolean(int index);
 
     /**
+     * 获取位于此缓冲区中指定绝对索引处的字节。此方法不修改该缓冲区的readerIndex或writerIndex。
+     *
      * Gets a byte at the specified absolute {@code index} in this buffer.
      * This method does not modify {@code readerIndex} or {@code writerIndex} of
      * this buffer.
@@ -1360,6 +1374,8 @@ public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
     public abstract boolean readBoolean();
 
     /**
+     * 获取位于当前readerIndex处的一个字节，并在此缓冲区中将readerIndex增加1。
+     *
      * Gets a byte at the current {@code readerIndex} and increases
      * the {@code readerIndex} by {@code 1} in this buffer.
      *
@@ -1771,6 +1787,9 @@ public abstract class ByteBuf implements ReferenceCounted, Comparable<ByteBuf> {
     public abstract ByteBuf writeBoolean(boolean value);
 
     /**
+     * 在当前的writerIndex处设置指定的字节，并在缓冲区中增加writerIndex 1。
+     * 指定值的24位高阶位将被忽略。如果这一点。writableBytes小于1,ensureWritable(int)将在尝试扩展容量以适应时被调用。
+     *
      * Sets the specified byte at the current {@code writerIndex}
      * and increases the {@code writerIndex} by {@code 1} in this buffer.
      * The 24 high-order bits of the specified value are ignored.

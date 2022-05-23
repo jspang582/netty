@@ -26,6 +26,8 @@ import java.util.Arrays;
 
 
 /**
+ * 通过分配新空间或包装或复制现有字节数组、字节缓冲区和字符串来创建新的ByteBuf。
+ *
  * Creates a new {@link ByteBuf} by allocating new space or by wrapping
  * or copying existing byte arrays, byte buffers and a string.
  *
