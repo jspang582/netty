@@ -32,6 +32,7 @@ public class HttpHelloWorldServerInitializer extends ChannelInitializer<SocketCh
 
     @Override
     public void initChannel(SocketChannel ch) {
+        // 对workerGroup的SocketChannel设置处理器
         ChannelPipeline p = ch.pipeline();
         if (sslCtx != null) {
             p.addLast(sslCtx.newHandler(ch.alloc()));

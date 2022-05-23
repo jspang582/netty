@@ -47,6 +47,8 @@ public interface Future<V> extends java.util.concurrent.Future<V> {
     Throwable cause();
 
     /**
+     * 将指定的监听器添加到此future。当future isDone时，将通知指定的监听器。如果这个future已经完成，则立即通知指定的监听器。
+     *
      * Adds the specified listener to this future.  The
      * specified listener is notified when this future is
      * {@linkplain #isDone() done}.  If this future is already

@@ -102,6 +102,8 @@ public class ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implemen
     }
 
     /**
+     * 调用ChannelHandlerContext#fireChannelReadComplete方法来转发到ChannelPipeline中的下一个channelboundhandler。子类可以重写这个方法来改变行为。
+     *
      * Calls {@link ChannelHandlerContext#fireChannelReadComplete()} to forward
      * to the next {@link ChannelInboundHandler} in the {@link ChannelPipeline}.
      *

@@ -38,6 +38,8 @@ public interface EventExecutorGroup extends ScheduledExecutorService, Iterable<E
     boolean isShuttingDown();
 
     /**
+     * 带合理默认值的shutdowngraceful (long, long, TimeUnit)的快捷方法。
+     *
      * Shortcut method for {@link #shutdownGracefully(long, long, TimeUnit)} with sensible default values.
      *
      * @return the {@link #terminationFuture()}
