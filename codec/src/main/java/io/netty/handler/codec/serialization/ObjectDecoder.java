@@ -25,6 +25,10 @@ import java.io.ObjectOutputStream;
 import java.io.StreamCorruptedException;
 
 /**
+ * 将接收到的ByteBuf反序列化为Java对象的解码器。
+ *
+ * 请注意，此解码器期望的序列化形式与标准ObjectOutputStream不兼容。请使用ObjectEncoder或ObjectEncoderOutputStream来确保与此解码器的互操作性。
+ *
  * A decoder which deserializes the received {@link ByteBuf}s into Java
  * objects.
  * <p>

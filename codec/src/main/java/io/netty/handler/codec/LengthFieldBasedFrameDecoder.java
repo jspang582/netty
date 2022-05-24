@@ -26,6 +26,8 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 
 /**
+ * 一种解码器，它根据消息中长度字段的值动态地分割接收到的ByteBuf。当你解码二进制消息时，它特别有用，因为它有一个表示消息体或整个消息长度的整数报头字段。
+ *
  * A decoder that splits the received {@link ByteBuf}s dynamically by the
  * value of the length field in the message.  It is particularly useful when you
  * decode a binary message which has an integer header field that represents the

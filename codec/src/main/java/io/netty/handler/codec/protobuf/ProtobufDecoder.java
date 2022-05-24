@@ -32,6 +32,10 @@ import io.netty.handler.codec.MessageToMessageDecoder;
 import java.util.List;
 
 /**
+ * 将接收到的ByteBuf解码为谷歌协议缓冲区消息和MessageLite。
+ *
+ * 请注意，如果您使用基于流的传输，如TCP/IP，此解码器必须与适当的ByteToMessageDecoder一起使用，如ProtobufVarint32FrameDecoder或LengthFieldBasedFrameDecoder。
+ *
  * Decodes a received {@link ByteBuf} into a
  * <a href="https://github.com/google/protobuf">Google Protocol Buffers</a>
  * {@link Message} and {@link MessageLite}. Please note that this decoder must

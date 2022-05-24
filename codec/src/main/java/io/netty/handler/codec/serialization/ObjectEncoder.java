@@ -26,6 +26,10 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
+ * 将Java对象序列化为ByteBuf的编码器。
+ *
+ * 请注意，此编码器生成的序列化形式与标准ObjectInputStream不兼容。请使用ObjectDecoder或ObjectDecoderInputStream来确保与该编码器的互操作性。
+ *
  * An encoder which serializes a Java object into a {@link ByteBuf}.
  * <p>
  * Please note that the serialized form this encoder produces is not

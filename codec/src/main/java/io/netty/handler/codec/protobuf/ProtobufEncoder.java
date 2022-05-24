@@ -31,6 +31,8 @@ import java.util.List;
 import static io.netty.buffer.Unpooled.*;
 
 /**
+ * 将请求的谷歌协议缓冲区消息和MessageLite编码为ByteBuf。
+ *
  * Encodes the requested <a href="https://github.com/google/protobuf">Google
  * Protocol Buffers</a> {@link Message} and {@link MessageLite} into a
  * {@link ByteBuf}. A typical setup for TCP/IP would be:

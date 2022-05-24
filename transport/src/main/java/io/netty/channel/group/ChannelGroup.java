@@ -31,6 +31,10 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 import java.util.Set;
 
 /**
+ * 一个线程安全的Set集，它包含开放Channel并提供对Channel的各种bulk操作。
+ * 使用ChannelGroup，你可以将Channel分类到一个有意义的组中(例如，基于每个服务或每个状态)。关闭的Channel将自动从集合中删除，因此您无需担心添加的Channel的生命周期。
+ * 一个Channel可以属于多个ChannelGroup。
+ *
  * A thread-safe {@link Set} that contains open {@link Channel}s and provides
  * various bulk operations on them.  Using {@link ChannelGroup}, you can
  * categorize {@link Channel}s into a meaningful group (e.g. on a per-service

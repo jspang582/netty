@@ -28,6 +28,8 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 /**
+ * 将请求的字符串编码为ByteBuf。
+ *
  * Encodes the requested {@link String} into a {@link ByteBuf}.
  * A typical setup for a text-based line protocol in a TCP/IP socket would be:
  * <pre>

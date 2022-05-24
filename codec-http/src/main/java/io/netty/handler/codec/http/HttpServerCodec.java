@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Queue;
 
 /**
+ * HttpRequestDecoder和HttpResponseEncoder的组合，使服务器端更容易实现HTTP。
+ *
  * A combination of {@link HttpRequestDecoder} and {@link HttpResponseEncoder}
  * which enables easier server side HTTP implementation.
  *

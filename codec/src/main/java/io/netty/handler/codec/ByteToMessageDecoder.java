@@ -30,6 +30,8 @@ import io.netty.util.internal.StringUtil;
 import java.util.List;
 
 /**
+ * 以流形式将字节从一个ByteBuf解码为另一个Message类型。
+ *
  * {@link ChannelInboundHandlerAdapter} which decodes bytes in a stream-like fashion from one {@link ByteBuf} to an
  * other Message type.
  *

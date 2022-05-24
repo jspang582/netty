@@ -20,6 +20,8 @@ import io.netty.channel.ChannelHandlerMask.Skip;
 import java.net.SocketAddress;
 
 /**
+ * ChannelOutboundHandler的框架实现。这个实现只是通过ChannelHandlerContext转发每个方法调用。
+ *
  * Skeleton implementation of a {@link ChannelOutboundHandler}. This implementation just forwards each method call via
  * the {@link ChannelHandlerContext}.
  */

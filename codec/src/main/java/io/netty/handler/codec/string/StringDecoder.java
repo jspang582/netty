@@ -28,6 +28,8 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 /**
+ * 将接收到的ByteBuf解码为字符串。请注意，如果您使用基于流的传输，如TCP/IP，此解码器必须与适当的ByteToMessageDecoder一起使用，如DelimiterBasedFrameDecoder或LineBasedFrameDecoder。
+ *
  * Decodes a received {@link ByteBuf} into a {@link String}.  Please
  * note that this decoder must be used with a proper {@link ByteToMessageDecoder}
  * such as {@link DelimiterBasedFrameDecoder} or {@link LineBasedFrameDecoder}

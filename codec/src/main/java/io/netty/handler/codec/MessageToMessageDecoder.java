@@ -26,6 +26,8 @@ import io.netty.util.internal.TypeParameterMatcher;
 import java.util.List;
 
 /**
+ * 将一个消息解码为另一个消息。
+ *
  * {@link ChannelInboundHandlerAdapter} which decodes from one message to an other message.
  *
  *
@@ -106,12 +108,14 @@ public abstract class MessageToMessageDecoder<I> extends ChannelInboundHandlerAd
     }
 
     /**
+     * 从一个消息解码到另一个消息。此解码器可处理的每个已写消息都将调用此方法。
+     *
      * Decode from one message to an other. This method will be called for each written message that can be handled
      * by this decoder.
      *
-     * @param ctx           the {@link ChannelHandlerContext} which this {@link MessageToMessageDecoder} belongs to
-     * @param msg           the message to decode to an other one
-     * @param out           the {@link List} to which decoded messages should be added
+     * @param ctx           the {@link ChannelHandlerContext} which this {@link MessageToMessageDecoder} belongs to MessageToMessageDecoder所属的ChannelHandlerContext
+     * @param msg           the message to decode to an other one 要解码成另一个的信息
+     * @param out           the {@link List} to which decoded messages should be added 应该将已解码的消息添加到其中的列表
      * @throws Exception    is thrown if an error occurs
      */
     protected abstract void decode(ChannelHandlerContext ctx, I msg, List<Object> out) throws Exception;
