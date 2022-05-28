@@ -30,6 +30,12 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 当通道一段时间内没有执行读、写或同时执行两个操作时，触发IdleStateEvent。
+ *
+ * readerIdleTime：读超时。在指定的时间间隔内没有从Channel读取到数据时，会触发READER_IDLE的IdleStateEvent事件。
+ * writerIdleTime：写超时。在指定的时间间隔内没有数据写入到Channel时，会触发WRITER_IDLE的IdleStateEvent事件。
+ * allIdleTime：读/写超时。在指定的时间间隔内没有读或写操作时，会触发ALL_IDLE的IdleStateEvent事件。
+ *
  * Triggers an {@link IdleStateEvent} when a {@link Channel} has not performed
  * read, write, or both operation for a while.
  *

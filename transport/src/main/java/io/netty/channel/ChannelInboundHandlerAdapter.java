@@ -116,6 +116,8 @@ public class ChannelInboundHandlerAdapter extends ChannelHandlerAdapter implemen
     }
 
     /**
+     * 调用ChannelHandlerContext.fireUserEventTriggered()来转发到ChannelPipeline中的下一个ChannelInboundHandler。子类可以重写这个方法来改变行为。
+     *
      * Calls {@link ChannelHandlerContext#fireUserEventTriggered(Object)} to forward
      * to the next {@link ChannelInboundHandler} in the {@link ChannelPipeline}.
      *

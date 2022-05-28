@@ -63,6 +63,8 @@ public interface ChannelInboundInvoker {
     ChannelInboundInvoker fireExceptionCaught(Throwable cause);
 
     /**
+     * 通道接收到一个用户定义的事件。
+     *
      * A {@link Channel} received an user defined event.
      *
      * This will result in having the  {@link ChannelInboundHandler#userEventTriggered(ChannelHandlerContext, Object)}

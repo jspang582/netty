@@ -19,6 +19,8 @@ import io.netty.channel.Channel;
 import io.netty.util.internal.ObjectUtil;
 
 /**
+ * 当Channel空闲时，由IdleStateHandler触发的用户事件。
+ *
  * A user event triggered by {@link IdleStateHandler} when a {@link Channel} is idle.
  */
 public class IdleStateEvent {
@@ -29,7 +31,10 @@ public class IdleStateEvent {
     public static final IdleStateEvent FIRST_ALL_IDLE_STATE_EVENT = new IdleStateEvent(IdleState.ALL_IDLE, true);
     public static final IdleStateEvent ALL_IDLE_STATE_EVENT = new IdleStateEvent(IdleState.ALL_IDLE, false);
 
+    // 空闲状态
     private final IdleState state;
+
+    // 如果这是IdleState的第一个事件，则返回true
     private final boolean first;
 
     /**
