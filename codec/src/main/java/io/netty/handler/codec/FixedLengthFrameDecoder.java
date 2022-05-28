@@ -23,6 +23,8 @@ import io.netty.channel.ChannelHandlerContext;
 import java.util.List;
 
 /**
+ * 一种解码器（固定长度报文来分包），它按固定的字节数分割接收到的ByteBuf。
+ *
  * A decoder that splits the received {@link ByteBuf}s by the fixed number
  * of bytes. For example, if you received the following four fragmented packets:
  * <pre>

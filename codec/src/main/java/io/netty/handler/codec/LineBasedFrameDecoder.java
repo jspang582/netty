@@ -22,6 +22,15 @@ import io.netty.util.ByteProcessor;
 import java.util.List;
 
 /**
+ * 回车换行分包，用于在行尾上分割接收到的ByteBuf。
+ *
+ * “\n”和“\r\n”都被处理。
+ *
+ * 字节流应采用UTF-8字符编码或ASCII。当前的实现使用直接字节进行字符转换，然后将该字符与一些低范围的ASCII字符(如'\n'或'\r')进行比较。UTF-8不使用低范围[0..0x7F]因此，这个实现完全支持多字节码点表示的字节值。
+ *
+ *
+ *
+ *
  * A decoder that splits the received {@link ByteBuf}s on line endings.
  * <p>
  * Both {@code "\n"} and {@code "\r\n"} are handled.

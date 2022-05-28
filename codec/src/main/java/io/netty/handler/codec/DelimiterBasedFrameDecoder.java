@@ -23,6 +23,8 @@ import io.netty.channel.ChannelHandlerContext;
 import java.util.List;
 
 /**
+ * 用一个或多个分隔符分隔接收到的ByteBuf的解码器（特殊分隔符分包）。它对于解码以NUL或换行符等分隔符结束的帧特别有用。
+ *
  * A decoder that splits the received {@link ByteBuf}s by one or more
  * delimiters.  It is particularly useful for decoding the frames which ends
  * with a delimiter such as {@link Delimiters#nulDelimiter() NUL} or
@@ -60,6 +62,8 @@ import java.util.List;
 public class DelimiterBasedFrameDecoder extends ByteToMessageDecoder {
 
     private final ByteBuf[] delimiters;
+
+    // 解码帧的最大长度
     private final int maxFrameLength;
     private final boolean stripDelimiter;
     private final boolean failFast;
