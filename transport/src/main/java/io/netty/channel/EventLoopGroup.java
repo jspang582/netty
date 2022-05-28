@@ -32,6 +32,8 @@ public interface EventLoopGroup extends EventExecutorGroup {
     EventLoop next();
 
     /**
+     * 用这个EventLoop循环注册一个Channel。一旦注册完成，返回的ChannelFuture将得到通知。
+     *
      * Register a {@link Channel} with this {@link EventLoop}. The returned {@link ChannelFuture}
      * will get notified once the registration was complete.
      */

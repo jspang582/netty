@@ -19,6 +19,8 @@ package io.netty.channel;
 import java.io.Serializable;
 
 /**
+ * 表示Channel的全局唯一标识符。
+ *
  * Represents the globally unique identifier of a {@link Channel}.
  * <p>
  * The identifier is generated from various sources listed in the following:
@@ -45,11 +47,15 @@ import java.io.Serializable;
  */
 public interface ChannelId extends Serializable, Comparable<ChannelId> {
     /**
+     * 返回ChannelId的简短但全局非唯一的字符串表示形式。
+     *
      * Returns the short but globally non-unique string representation of the {@link ChannelId}.
      */
     String asShortText();
 
     /**
+     * 返回ChannelId的长但全局唯一的字符串表示形式。
+     *
      * Returns the long yet globally unique string representation of the {@link ChannelId}.
      */
     String asLongText();

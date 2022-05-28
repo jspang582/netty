@@ -23,6 +23,8 @@ import java.nio.channels.WritableByteChannel;
 import java.util.Map;
 
 /**
+ * Channel的一组配置属性。
+ *
  * A set of configuration properties of a {@link Channel}.
  * <p>
  * Please down-cast to more specific configuration type such as

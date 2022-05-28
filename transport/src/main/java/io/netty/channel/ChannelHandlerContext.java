@@ -127,16 +127,22 @@ import java.nio.channels.Channels;
 public interface ChannelHandlerContext extends AttributeMap, ChannelInboundInvoker, ChannelOutboundInvoker {
 
     /**
+     * 返回绑定到ChannelHandlerContext的Channel。
+     *
      * Return the {@link Channel} which is bound to the {@link ChannelHandlerContext}.
      */
     Channel channel();
 
     /**
+     * 返回用于执行任意任务的EventExecutor。
+     *
      * Returns the {@link EventExecutor} which is used to execute an arbitrary task.
      */
     EventExecutor executor();
 
     /**
+     * ChannelHandlerContext的唯一名称。将ChannelHandler添加到ChannelPipeline时使用了该名称。这个名称还可以用于从ChannelPipeline访问已注册的ChannelHandler。
+     *
      * The unique name of the {@link ChannelHandlerContext}.The name was used when then {@link ChannelHandler}
      * was added to the {@link ChannelPipeline}. This name can also be used to access the registered
      * {@link ChannelHandler} from the {@link ChannelPipeline}.
@@ -144,11 +150,15 @@ public interface ChannelHandlerContext extends AttributeMap, ChannelInboundInvok
     String name();
 
     /**
+     * 绑定到ChannelHandlerContext的ChannelHandler。
+     *
      * The {@link ChannelHandler} that is bound this {@link ChannelHandlerContext}.
      */
     ChannelHandler handler();
 
     /**
+     * 如果属于此上下文的ChannelHandler从ChannelPipeline中移除，则返回true。注意，这个方法只意味着在EventLoop中从with调用。
+     *
      * Return {@code true} if the {@link ChannelHandler} which belongs to this context was removed
      * from the {@link ChannelPipeline}. Note that this method is only meant to be called from with in the
      * {@link EventLoop}.
@@ -189,11 +199,15 @@ public interface ChannelHandlerContext extends AttributeMap, ChannelInboundInvok
     ChannelHandlerContext flush();
 
     /**
+     * 返回指定的ChannelPipeline
+     *
      * Return the assigned {@link ChannelPipeline}
      */
     ChannelPipeline pipeline();
 
     /**
+     * 返回分配的ByteBufAllocator，它将用于分配bytebuf。
+     *
      * Return the assigned {@link ByteBufAllocator} which will be used to allocate {@link ByteBuf}s.
      */
     ByteBufAllocator alloc();

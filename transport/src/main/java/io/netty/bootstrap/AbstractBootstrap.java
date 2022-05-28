@@ -121,6 +121,10 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     /**
+     * ChannelFactory用于在调用bind()时创建Channel实例。
+     * 通常只在channel(Class)方法因为一些更复杂的需求而不能工作时才使用此方法。
+     * 如果你的Channel实现有一个无参数的构造函数，强烈建议只使用channel(Class)来简化你的代码。
+     *
      * {@link io.netty.channel.ChannelFactory} which is used to create {@link Channel} instances from
      * when calling {@link #bind()}. This method is usually only used if {@link #channel(Class)}
      * is not working for you because of some more complex needs. If your {@link Channel} implementation
@@ -256,6 +260,8 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     /**
+     * 创建一个新的Channel并绑定它。
+     *
      * Create a new {@link Channel} and bind it.
      */
     public ChannelFuture bind(SocketAddress localAddress) {
@@ -302,6 +308,7 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     final ChannelFuture initAndRegister() {
         Channel channel = null;
         try {
+            // 实例化Channel
             channel = channelFactory.newChannel();
             init(channel);
         } catch (Throwable t) {
@@ -336,6 +343,9 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
         return regFuture;
     }
 
+    /**
+     * 初始化Channel
+     */
     abstract void init(Channel channel) throws Exception;
 
     private static void doBind0(
@@ -375,6 +385,8 @@ public abstract class AbstractBootstrap<B extends AbstractBootstrap<B, C>, C ext
     }
 
     /**
+     * 返回可用于获取引导程序的当前配置的AbstractBootstrapConfig对象。
+     *
      * Returns the {@link AbstractBootstrapConfig} object that can be used to obtain the current config
      * of the bootstrap.
      */

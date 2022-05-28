@@ -74,6 +74,7 @@ public abstract class MultithreadEventExecutorGroup extends AbstractEventExecuto
             throw new IllegalArgumentException(String.format("nThreads: %d (expected: > 0)", nThreads));
         }
 
+        // 没有指定executor，则默认为ThreadPerTaskExecutor
         if (executor == null) {
             executor = new ThreadPerTaskExecutor(newDefaultThreadFactory());
         }
@@ -153,6 +154,8 @@ public abstract class MultithreadEventExecutorGroup extends AbstractEventExecuto
     }
 
     /**
+     * 创建一个新的EventExecutor，之后可以通过next()方法访问它。将为MultithreadEventExecutorGroup服务的每个线程调用此方法。
+     *
      * Create a new EventExecutor which will later then accessible via the {@link #next()}  method. This method will be
      * called for each thread that will serve this {@link MultithreadEventExecutorGroup}.
      *

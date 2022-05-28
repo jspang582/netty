@@ -53,6 +53,8 @@ public class NioServerSocketChannel extends AbstractNioMessageChannel
     private static ServerSocketChannel newSocket(SelectorProvider provider) {
         try {
             /**
+             * 通过SelectorProvider开启SocketChannel。
+             *
              *  Use the {@link SelectorProvider} to open {@link SocketChannel} and so remove condition in
              *  {@link SelectorProvider#provider()} which is called by each ServerSocketChannel.open() otherwise.
              *

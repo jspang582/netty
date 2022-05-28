@@ -88,6 +88,8 @@ public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerCh
     }
 
     /**
+     * 允许指定一个ChannelOption，当Channel实例被创建(在接受者接受Channel之后)时使用。使用null值来删除之前设置的ChannelOption。
+     *
      * Allow to specify a {@link ChannelOption} which is used for the {@link Channel} instances once they get created
      * (after the acceptor accepted the {@link Channel}). Use a value of {@code null} to remove a previous set
      * {@link ChannelOption}.
@@ -126,6 +128,9 @@ public class ServerBootstrap extends AbstractBootstrap<ServerBootstrap, ServerCh
         return this;
     }
 
+    /**
+     * 服务端初始化Channel
+     */
     @Override
     void init(Channel channel) {
         setChannelOptions(channel, options0().entrySet().toArray(newOptionArray(0)), logger);

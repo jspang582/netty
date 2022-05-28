@@ -101,6 +101,8 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
     }
 
     /**
+     * 返回一个新的DefaultChannelPipeline实例。
+     *
      * Returns a new {@link DefaultChannelPipeline} instance.
      */
     protected DefaultChannelPipeline newChannelPipeline() {
@@ -1108,6 +1110,8 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
     }
 
     /**
+     * 安排一个读操作。
+     *
      * Schedule a read operation.
      */
     protected abstract void doBeginRead() throws Exception;

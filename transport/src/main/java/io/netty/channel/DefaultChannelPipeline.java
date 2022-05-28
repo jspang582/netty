@@ -40,6 +40,8 @@ import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
+ * 默认的ChannelPipeline实现。它通常是在Channel创建时由Channel实现创建的。
+ *
  * The default {@link ChannelPipeline} implementation.  It is usually created
  * by a {@link Channel} implementation when the {@link Channel} is created.
  */
@@ -94,6 +96,9 @@ public class DefaultChannelPipeline implements ChannelPipeline {
         succeededFuture = new SucceededChannelFuture(channel, null);
         voidPromise =  new VoidChannelPromise(channel, true);
 
+        /**
+         * 双向指针
+         */
         tail = new TailContext(this);
         head = new HeadContext(this);
 
@@ -224,6 +229,7 @@ public class DefaultChannelPipeline implements ChannelPipeline {
         return this;
     }
 
+    // 新的newCtx插入到tail前
     private void addLast0(AbstractChannelHandlerContext newCtx) {
         AbstractChannelHandlerContext prev = tail.prev;
         newCtx.prev = prev;
@@ -1253,6 +1259,7 @@ public class DefaultChannelPipeline implements ChannelPipeline {
         }
     }
 
+    // 一个处理字节和消息的特殊的全部捕获处理程序。
     // A special catch-all handler that handles both bytes and messages.
     final class TailContext extends AbstractChannelHandlerContext implements ChannelInboundHandler {
 

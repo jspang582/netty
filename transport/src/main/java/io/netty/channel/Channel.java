@@ -231,6 +231,8 @@ public interface Channel extends AttributeMap, ChannelOutboundInvoker, Comparabl
         SocketAddress remoteAddress();
 
         /**
+         * 注册ChannelPromise的Channel，并在注册完成后通知ChannelFuture。
+         *
          * Register the {@link Channel} of the {@link ChannelPromise} and notify
          * the {@link ChannelFuture} once the registration was complete.
          */

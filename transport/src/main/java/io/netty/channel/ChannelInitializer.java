@@ -60,6 +60,8 @@ public abstract class ChannelInitializer<C extends Channel> extends ChannelInbou
             new ConcurrentHashMap<ChannelHandlerContext, Boolean>());
 
     /**
+     * 该方法将在Channel注册后被调用。在方法返回之后，该实例将从Channel的ChannelPipeline中删除。
+     *
      * This method will be called once the {@link Channel} was registered. After the method returns this instance
      * will be removed from the {@link ChannelPipeline} of the {@link Channel}.
      *

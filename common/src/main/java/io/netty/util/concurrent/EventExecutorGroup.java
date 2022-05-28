@@ -63,6 +63,8 @@ public interface EventExecutorGroup extends ScheduledExecutorService, Iterable<E
     Future<?> shutdownGracefully(long quietPeriod, long timeout, TimeUnit unit);
 
     /**
+     * 返回Future，当由该EventExecutorGroup管理的所有EventExecutor已被终止时，该Future将收到通知。
+     *
      * Returns the {@link Future} which is notified when all {@link EventExecutor}s managed by this
      * {@link EventExecutorGroup} have been terminated.
      */

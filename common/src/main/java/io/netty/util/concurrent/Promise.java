@@ -16,6 +16,7 @@
 package io.netty.util.concurrent;
 
 /**
+ * 特殊的Future，这是可写的。
  * Special {@link Future} which is writable.
  */
 public interface Promise<V> extends Future<V> {

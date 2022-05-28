@@ -99,12 +99,16 @@ import java.util.Set;
 public interface ChannelGroup extends Set<Channel>, Comparable<ChannelGroup> {
 
     /**
+     * 返回此组的名称。组名纯粹是为了帮助您将一个组与其他组区分开来。
+     *
      * Returns the name of this group.  A group name is purely for helping
      * you to distinguish one group from others.
      */
     String name();
 
     /**
+     * 返回具有指定ChannelId的Channel。
+     *
      * Returns the {@link Channel} which has the specified {@link ChannelId}.
      *
      * @return the matching {@link Channel} if found. {@code null} otherwise.

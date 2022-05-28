@@ -214,6 +214,9 @@ public abstract class SingleThreadEventExecutor extends AbstractScheduledEventEx
     }
 
     /**
+     * 创建一个新的Queue来保存要执行的任务。
+     * 这个默认的实现将返回一个LinkedBlockingQueue，但是如果你子类SingleThreadEventExecutor不会做任何阻塞调用的这个队列可能意义@Override并返回一些高性能实现不支持阻塞操作。
+     *
      * Create a new {@link Queue} which will holds the tasks to execute. This default implementation will return a
      * {@link LinkedBlockingQueue} but if your sub-class of {@link SingleThreadEventExecutor} will not do any blocking
      * calls on the this {@link Queue} it may make sense to {@code @Override} this and return some more performant
@@ -371,6 +374,8 @@ public abstract class SingleThreadEventExecutor extends AbstractScheduledEventEx
     }
 
     /**
+     * 向任务队列添加一个任务，或者如果此实例之前被关闭，则抛出RejectedExecutionException。
+     *
      * Add a task to the task queue, or throws a {@link RejectedExecutionException} if this instance was shutdown
      * before.
      */

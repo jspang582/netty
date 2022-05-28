@@ -18,23 +18,31 @@ package io.netty.util.concurrent;
 import io.netty.util.internal.UnstableApi;
 
 /**
+ * 创建新的EventExecutorChooserFactory.EventExecutorChoosers的工厂。
+ *
  * Factory that creates new {@link EventExecutorChooser}s.
  */
 @UnstableApi
 public interface EventExecutorChooserFactory {
 
     /**
+     * 返回一个新的EventExecutorChooserFactory.EventExecutorChooser。
+     *
      * Returns a new {@link EventExecutorChooser}.
      */
     EventExecutorChooser newChooser(EventExecutor[] executors);
 
     /**
+     * 选择下一个EventExecutor来使用。
+     *
      * Chooses the next {@link EventExecutor} to use.
      */
     @UnstableApi
     interface EventExecutorChooser {
 
         /**
+         * 返回要使用的新的EventExecutor。
+         *
          * Returns the new {@link EventExecutor} to use.
          */
         EventExecutor next();
