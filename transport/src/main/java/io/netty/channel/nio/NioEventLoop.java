@@ -823,6 +823,7 @@ public final class NioEventLoop extends SingleThreadEventLoop {
                     break;
                 }
 
+                // nio 阻塞需要等待处理的事件发生
                 int selectedKeys = selector.select(timeoutMillis);
                 selectCnt ++;
 

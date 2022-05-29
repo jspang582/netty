@@ -100,6 +100,8 @@ public interface ChannelOutboundInvoker {
     ChannelFuture deregister();
 
     /**
+     * 请求绑定到给定的SocketAddress，并在操作完成后通知ChannelFuture(因为操作成功或因为错误)。
+     *
      * Request to bind to the given {@link SocketAddress} and notify the {@link ChannelFuture} once the operation
      * completes, either because the operation was successful or because of an error.
      *

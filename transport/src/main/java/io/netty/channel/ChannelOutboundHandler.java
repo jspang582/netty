@@ -24,6 +24,8 @@ import java.net.SocketAddress;
  */
 public interface ChannelOutboundHandler extends ChannelHandler {
     /**
+     * 在进行绑定操作时调用。
+     *
      * Called once a bind operation is made.
      *
      * @param ctx           the {@link ChannelHandlerContext} for which the bind operation is made

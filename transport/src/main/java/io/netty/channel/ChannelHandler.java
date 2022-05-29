@@ -180,6 +180,8 @@ import java.lang.annotation.Target;
 public interface ChannelHandler {
 
     /**
+     * 获取在ChannelHandler添加到实际上下文并准备处理事件之后调用。
+     *
      * Gets called after the {@link ChannelHandler} was added to the actual context and it's ready to handle events.
      */
     void handlerAdded(ChannelHandlerContext ctx) throws Exception;
@@ -200,6 +202,8 @@ public interface ChannelHandler {
     void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception;
 
     /**
+     * 指明可以多次将带注解的ChannelHandler的同一个实例添加到一个或多个ChannelPipeline中，而不存在竞争条件。
+     *
      * Indicates that the same instance of the annotated {@link ChannelHandler}
      * can be added to one or more {@link ChannelPipeline}s multiple times
      * without a race condition.
@@ -215,7 +219,7 @@ public interface ChannelHandler {
     @Documented
     @Target(ElementType.TYPE)
     @Retention(RetentionPolicy.RUNTIME)
-    @interface Sharable {
+    @interface  Sharable {
         // no value
     }
 }

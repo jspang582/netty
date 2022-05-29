@@ -1068,6 +1068,8 @@ public abstract class AbstractChannel extends DefaultAttributeMap implements Cha
     protected abstract SocketAddress remoteAddress0();
 
     /**
+     * 在Channel注册为其EventLoop作为注册过程的一部分之后调用。子类可以重写这个方法。
+     *
      * Is called after the {@link Channel} is registered with its {@link EventLoop} as part of the register process.
      *
      * Sub-classes may override this method

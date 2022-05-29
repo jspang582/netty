@@ -51,6 +51,8 @@ import java.util.concurrent.Executor;
 import static io.netty.channel.internal.ChannelUtils.MAX_BYTES_PER_GATHERING_WRITE_ATTEMPTED_LOW_THRESHOLD;
 
 /**
+ * SocketChannel使用基于NIO选择器的实现。
+ *
  * {@link io.netty.channel.socket.SocketChannel} which uses NIO selector based implementation.
  */
 public class NioSocketChannel extends AbstractNioByteChannel implements io.netty.channel.socket.SocketChannel {
@@ -81,6 +83,8 @@ public class NioSocketChannel extends AbstractNioByteChannel implements io.netty
     }
 
     /**
+     * 使用给定的SelectorProvider创建一个新实例。
+     *
      * Create a new instance using the given {@link SelectorProvider}.
      */
     public NioSocketChannel(SelectorProvider provider) {

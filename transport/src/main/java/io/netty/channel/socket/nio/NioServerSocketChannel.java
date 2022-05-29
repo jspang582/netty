@@ -39,6 +39,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * ServerSocketChannel实现，它使用基于NIO选择器的实现来接受新连接。
+ *
  * A {@link io.netty.channel.socket.ServerSocketChannel} implementation which uses
  * NIO selector based implementation to accept new connections.
  */

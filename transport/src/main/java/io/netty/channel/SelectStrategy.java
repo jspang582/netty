@@ -18,6 +18,10 @@ package io.netty.channel;
 import io.netty.util.IntSupplier;
 
 /**
+ * Select策略接口。
+ *
+ * 提供控制选择循环行为的能力。例如，如果有事件需要立即处理，阻塞选择操作可以被延迟或完全跳过。
+ *
  * Select strategy interface.
  *
  * Provides the ability to control the behavior of the select loop. For example a blocking select
@@ -26,19 +30,27 @@ import io.netty.util.IntSupplier;
 public interface SelectStrategy {
 
     /**
+     * 指示后面应该有一个阻塞选择。
+     *
      * Indicates a blocking select should follow.
      */
     int SELECT = -1;
     /**
+     * 指示应重试IO循环，不直接进行阻塞选择。
+     *
      * Indicates the IO loop should be retried, no blocking select to follow directly.
      */
     int CONTINUE = -2;
     /**
+     * 表示IO循环，以轮询新的事件而不阻塞。
+     *
      * Indicates the IO loop to poll for new events without blocking.
      */
     int BUSY_WAIT = -3;
 
     /**
+     * 可以使用SelectStrategy来控制可能的选择调用的结果。
+     *
      * The {@link SelectStrategy} can be used to steer the outcome of a potential select
      * call.
      *

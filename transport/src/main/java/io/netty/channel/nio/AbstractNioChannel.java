@@ -43,6 +43,8 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * Channel实现的抽象基类，使用基于Selector的方法。
+ *
  * Abstract base class for {@link Channel} implementations which use a Selector based approach.
  */
 public abstract class AbstractNioChannel extends AbstractChannel {
@@ -202,6 +204,8 @@ public abstract class AbstractNioChannel extends AbstractChannel {
         void finishConnect();
 
         /**
+         * 从底层SelectableChannel读取
+         *
          * Read from underlying {@link SelectableChannel}
          */
         void read();

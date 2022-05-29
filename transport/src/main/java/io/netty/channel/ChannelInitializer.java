@@ -26,6 +26,11 @@ import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * 一个特殊的ChannelInboundHandler，它提供了一个简单的方法来初始化一个Channel，一旦通道注册到它的EventLoop。
+ *
+ * 实现通常在Bootstrap.handler(ChannelHandler)， ServerBootstrap.handler(ChannelHandler)和ServerBootstrap.childHandler(ChannelHandler)的上下环境中使用，以设置Channel的ChannelPipeline。
+ *
+ *
  * A special {@link ChannelInboundHandler} which offers an easy way to initialize a {@link Channel} once it was
  * registered to its {@link EventLoop}.
  *
